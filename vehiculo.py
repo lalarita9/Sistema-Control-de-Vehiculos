@@ -15,7 +15,7 @@ class Vehiculo:
       
     #Sobrecarga   
     def __str__(self): 
-        return f"Marca {self.marca}, Modelo {self.modelo}, {self.nro_ruedas} Ruedas, "
+        return f"Marca {self.marca}, Modelo {self.modelo}, {self.nro_ruedas} Ruedas "
     
 #Clase Automóvil representa un vehículo con velocidad y cilindrada
 class Automovil(Vehiculo): 
@@ -71,18 +71,18 @@ class Bicicleta(Vehiculo):
         self.tipo = tipo
             
     def __str__(self):
-        return super().__str__() + f'Tipo: {self.tipo}, ' 
+        return super().__str__() + f'Tipo: {self.tipo}' 
 
 #La clase Motocicleta es la representación de una Bicicleta con su atributo número de radio, cuadro y motor.
 class Motocicleta(Bicicleta): 
-    def __init__(self, marca, modelo, nro_ruedas, tipo, nro_radio, cuadro, motor): 
+    #Se cambia el orden de motor y nro para que se imprima en pantalla de acuerdo a instancias dadas      
+    def __init__(self, marca, modelo, nro_ruedas, tipo,  motor, cuadro, nro_radio ): 
         super().__init__(marca, modelo, nro_ruedas, tipo) 
-        self.nro_radio= nro_radio
-        self.cuadro = cuadro
         self.motor = motor
-    #Se cambia el orden de motor, para que se imprima en pantalla de acuerdo a instancias dadas      
+        self.cuadro = cuadro
+        self.nro_radio= nro_radio
     def __str__(self):
-        return super().__str__() + f'Motor: {self.motor}, Nro. Radio: {self.nro_radio}, Cuadro: {self.cuadro}' 
+        return super().__str__() + f' Motor: {self.motor}, Cuadro: {self.cuadro}, Nro Radios: {self.nro_radio}' 
 
     
    
