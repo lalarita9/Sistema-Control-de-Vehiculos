@@ -12,6 +12,39 @@ class Vehiculo:
         self.marca = marca
         self.modelo = modelo 
         self.nro_ruedas = nro_ruedas
+    '''═══════ •Desarrollo Parte 3• ════════'''
+    #Creación método guardar datos:   
+    def guardar_datos_cvs(self):
+        try:
+            with open ("vehiculos.csv", "a", newline="") as archivo:
+                datos = [str(self.__class__), str(self.__dict__)]
+                 #Activar línea 22 y desactivar línea 20, genera error en lectura de datos
+                #datos = [(self.__class__, self.__dict__)] 
+                archivo_csv = csv.writer(archivo)
+                archivo_csv.writerow(datos)
+                #Pasa lo mismo pasa sí dejo activa la línea 20 y activo línea 26
+                #archivo_csv.writerows(datos)
+        except FileNotFoundError:
+            print("No se pudo acceder al archivo")
+        except Exception as e:
+            print("Oops! algo salió mal ───⌲ ", e)
+            
+    #Creación método lectura de datos:
+    def leer_datos_cvs(self):
+        try: 
+            with open("vehiculos.csv", "r") as archivo:
+                lector = csv.reader(archivo)
+                print(f"Lista de Vehículos {type(self).__name__}")
+                for caracteristicas in lector:
+                    clases = str(self.__class__)
+                    if clases in caracteristicas[0]:
+                     print(caracteristicas[1])
+                print("")    
+        except FileNotFoundError:
+            print("No se pudo acceder al archivo")
+        except Exception as e:
+            print("Oops! algo salió mal ───⌲ ", e) 
+    '''═══════ •Fin Desarrollo Parte 3• ════════'''
       
     #Sobrecarga   
     def __str__(self): 
