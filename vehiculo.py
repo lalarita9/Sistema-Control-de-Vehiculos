@@ -28,5 +28,61 @@ class Automovil(Vehiculo):
            
     def __str__(self):
         return super().__str__() + f'{self.velocidad} Km/h, {self.cilindrada} cc '
+
+''' Drilling Final
+Parte 2:
+Partiendo de la descripción anterior por parte del cliente, nos plantea que se manejan dos tipos de 
+automóviles tipo: particular y carga, que contienen todas las características de un automóvil.
+● Los automóviles tipo particular contienen adicionalmente los números de puesto.
+● Los automóviles tipo carga contienen adicionalmente el peso de la carga en kg.
+Adicionalmente, se tienen el tipo de vehículos que son bicicleta que contiene las características 
+de los vehículos, y se le adiciona el tipo de bicicleta que puede ser: Urbana o de Carrera.
+Con los tipos de bicicletas tenemos las motocicletas que contienen todas las características de 
+una bicicleta, además de las siguientes: nro_radios, cuadro y motor.
+'''
+#La clase Particular es la representación de un Automóvil con su atributo número de puesto
+class Particular(Automovil): 
+    def __init__(self, marca, modelo, nro_ruedas, velocidad, cilindrada, nro_puesto): 
+        super().__init__(marca, modelo, nro_ruedas, velocidad, cilindrada) 
+        self.nro_puesto = nro_puesto 
+    #Método Getters
+    def get_nro_puesto(self):
+        return self.nro_puesto
+    #Método Setters
+    def set_nro_puesto(self, nro_puesto2):
+        self.nro_puesto = nro_puesto2
+     
+    def __str__(self):
+        return super().__str__() + f'Puestos: {self.nro_puesto}'
+    
+#La clase Carga es la representación de un Automóvil con su atributo carga   
+class Carga(Automovil): 
+    def __init__(self, marca, modelo, nro_ruedas, velocidad, cilindrada, carga): 
+        super().__init__(marca, modelo, nro_ruedas, velocidad, cilindrada) 
+        self.carga= carga
+            
+    def __str__(self):
+        return super().__str__() + f'Carga: {self.carga} Kg'
+    
+#La clase Bicicleta es la representación de un Vehículo con su atributo tipo
+class Bicicleta(Vehiculo): 
+    def __init__(self, marca, modelo, nro_ruedas, tipo): 
+        super().__init__(marca, modelo, nro_ruedas) 
+        self.tipo = tipo
+            
+    def __str__(self):
+        return super().__str__() + f'Tipo: {self.tipo}, ' 
+
+#La clase Motocicleta es la representación de una Bicicleta con su atributo número de radio, cuadro y motor.
+class Motocicleta(Bicicleta): 
+    def __init__(self, marca, modelo, nro_ruedas, tipo, nro_radio, cuadro, motor): 
+        super().__init__(marca, modelo, nro_ruedas, tipo) 
+        self.nro_radio= nro_radio
+        self.cuadro = cuadro
+        self.motor = motor
+    #Se cambia el orden de motor, para que se imprima en pantalla de acuerdo a instancias dadas      
+    def __str__(self):
+        return super().__str__() + f'Motor: {self.motor}, Nro. Radio: {self.nro_radio}, Cuadro: {self.cuadro}' 
+
     
    
