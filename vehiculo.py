@@ -75,18 +75,18 @@ una bicicleta, además de las siguientes: nro_radios, cuadro y motor.
 '''
 #La clase Particular es la representación de un Automóvil con su atributo número de puesto
 class Particular(Automovil): 
-    def __init__(self, marca, modelo, nro_ruedas, velocidad, cilindrada, nro_puesto): 
+    def __init__(self, marca, modelo, nro_ruedas, velocidad, cilindrada, nro_puestos): 
         super().__init__(marca, modelo, nro_ruedas, velocidad, cilindrada) 
-        self.nro_puesto = nro_puesto 
+        self.nro_puestos = nro_puestos 
     #Método Getters
     def get_nro_puesto(self):
         return self.nro_puesto
     #Método Setters
     def set_nro_puesto(self, nro_puesto2):
-        self.nro_puesto = nro_puesto2
+        self.nro_puestos = nro_puesto2
      
     def __str__(self):
-        return super().__str__() + f'Puestos: {self.nro_puesto}'
+        return super().__str__() + f'Puestos: {self.nro_puestos}'
     
 #La clase Carga es la representación de un Automóvil con su atributo carga   
 class Carga(Automovil): 
@@ -109,13 +109,13 @@ class Bicicleta(Vehiculo):
 #La clase Motocicleta es la representación de una Bicicleta con su atributo número de radio, cuadro y motor.
 class Motocicleta(Bicicleta): 
     #Se cambia el orden de motor y nro para que se imprima en pantalla de acuerdo a instancias dadas      
-    def __init__(self, marca, modelo, nro_ruedas, tipo,  motor, cuadro, nro_radio ): 
+    def __init__(self, marca, modelo, nro_ruedas, tipo,  motor, cuadro, nro_radios ): 
         super().__init__(marca, modelo, nro_ruedas, tipo) 
         self.motor = motor
         self.cuadro = cuadro
-        self.nro_radio= nro_radio
+        self.nro_radios= nro_radios
     def __str__(self):
-        return super().__str__() + f' Motor: {self.motor}, Cuadro: {self.cuadro}, Nro Radios: {self.nro_radio}' 
+        return super().__str__() + f' Motor: {self.motor}, Cuadro: {self.cuadro}, Nro Radios: {self.nro_radios}' 
 
     
    
