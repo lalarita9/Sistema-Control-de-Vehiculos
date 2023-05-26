@@ -13,3 +13,14 @@ print(carga)
 print(bicicleta)
 print(motocicleta)
 print("")
+
+#Verificación de relación entre instancia Bicicleta y otros medios de transporte, usando la función "isinstance"
+#Se usa la función print para mostrar el resultado sí la relación es verdadera o falsa
+print("Verificación de relación entre instancia Motocicleta y otros medios de transporte")
+print(f"Motocicleta es instancia con relación a Vehículo: {isinstance(motocicleta,Vehiculo)}")
+print(f"Motocicleta es instancia con relación a Automóvil: {isinstance(motocicleta,Automovil)}")
+print(f"Motocicleta es instancia con relación a Vehículo particular: {isinstance(motocicleta,Particular)}")
+print(f"Motocicleta es instancia con relación a Vehículo carga: {isinstance(motocicleta,Carga)}")
+print(f"Motocicleta es instancia con relación a Bicicleta: {isinstance(motocicleta,Bicicleta)}")
+print(f"Motocicleta es instancia con relación a Motocicleta: {isinstance(motocicleta,Motocicleta)}")
+print("")
